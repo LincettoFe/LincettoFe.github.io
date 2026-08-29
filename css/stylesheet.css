@@ -127,3 +127,93 @@ span.highlight {
   object-fit: cover;
   display: block;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+    "name  ."
+    "bio   photo";
+  align-items: start;
+  column-gap: 2.5%;
+}
+
+.name-block {
+  grid-area: name;
+  padding: 2.5% 0;
+}
+
+.bio-block {
+  grid-area: bio;
+  padding-bottom: 2.5%;
+}
+
+.bio-block p,
+.paper-text p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.photo-block {
+  grid-area: photo;
+  padding: 0 2.5% 2.5%;
+  text-align: center;
+}
+
+.section-title {
+  padding: 20px 0;
+}
+
+.paper-list {
+  width: 100%;
+}
+
+.paper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.paper-thumb {
+  flex: 0 0 160px;
+}
+
+.paper-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.footer {
+  padding: 20px 0;
+}
+
+@media (max-width: 700px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "photo"
+      "bio";
+  }
+
+  .paper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paper-text {
+    width: 100%;
+  }
+}
